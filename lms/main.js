@@ -5,7 +5,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 
-
+const path = require('path')
 const db = require('./database/index')
 const userModel = require('./database/models/user');
 const otpModel = require('./database/models/otp')
@@ -15,7 +15,7 @@ const sendMail = require('./utils/sendMail');
 
 var app = express();
 
-const reactBuild = path.join(__dirname, lms, build)
+const reactBuild = path.join(__dirname, 'lms', 'build')
 app.use(express.static(reactBuild))
 app.use(function(req, res, next) {
   res.header('Content-Type', 'application/json;charset=UTF-8')
