@@ -69,7 +69,7 @@ export default function Home() {
   function getMembers(){
     api.get("/getMembers", {withCredentials: true})
     .then((data)=>{
-      console.log(data)
+      console.log(data.data)
       setMembers(data.data);
       navigate("/")
     })
